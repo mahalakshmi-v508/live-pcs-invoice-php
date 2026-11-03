@@ -1,0 +1,54 @@
+MyISAM vs innoDB difference :
+
+InnoDB is a transactional storage engine(Larger Databases) >>>
+while MyISAM belongs to the non-transactional category(Smaller Databases).
+
+--------------------------------------------------------------------------
+
+MYSQL stored procedures, Triggers :
+
+STORED PROCEDURES CODE:
+
+DELIMITER //
+CREATE PROCEDURES `ALLVALUES`()[new name we have to declare]
+BEGIN
+SELECT * FROM employee_address;
+END//
+
+DELIMITER;
+
+TRIGGERS:
+
+A trigger is a named database object that is associated with a table,
+and that activates when a particular event occurs for the table. 
+Some uses for triggers are to perform checks of values to be inserted
+into a table or to perform calculations on values involved in an update.
+
+--------------------------------------------------------------------------
+
+Performance tuning mysql queries - best practices and indexing :
+
+topics to speed up our database search or database collection.
+
+--------------------------------------------------------------------------
+
+Normalization in DBMS (SQL) 1NF, 2NF, 3NF :
+
+1NF - single value and doesn't have different ID
+
+2NF - 1NF and not in partial dependency
+
+3NF - 2NF and not in transitive dependency
+
+BCNF(Boyce Codd) - 3NF and not in reverse dependency
+
+4NF - BCNF and not in multi-value dependency
+
+-------------------------------------------------------------------------- 
+
+Full Text Searching :
+
+MySQL has support for full-text indexing and searching: A full-text index in MySQL is an index of type FULLTEXT . 
+Full-text indexes can be used only with InnoDB or MyISAM tables, and can be created only for CHAR, VARCHAR , or TEXT columns.
+
+--------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+# Never expose secrets or repository metadata over HTTP.
+<FilesMatch "^\.env">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 404 /\.git
