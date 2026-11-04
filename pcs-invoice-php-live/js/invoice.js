@@ -128,7 +128,14 @@ function removeSelectedRows() {
 /** Re-index row IDs after delete so price_N matches taxableValue_N in the same row. */
 function renumberInvoiceRows() {
     $('#invoiceItem tbody tr').each(function (index) {
-        resetRowInputs($(this), index + 1);
+        const rowNumber = index + 1;
+        const $row = $(this);
+        $row.find('.itemRow').attr('id', 'itemRow_' + rowNumber);
+        $row.find("input[name='productName[]']").attr('id', 'productName_' + rowNumber);
+        $row.find("input[name='productCode[]']").attr('id', 'productCode_' + rowNumber);
+        $row.find("input[name='price[]']").attr('id', 'price_' + rowNumber);
+        $row.find("input[name='taxableValue[]']").attr('id', 'taxableValue_' + rowNumber);
+        $row.find("select[name='itemMonth[]']").attr('id', 'itemMonth_' + rowNumber);
     });
 }
 
@@ -516,4 +523,3 @@ function injectAutocompleteStyles() {
 
     $('head').append(css);
 }
-

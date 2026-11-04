@@ -7,7 +7,6 @@ if ((isset($_GET['action']) && $_GET['action'] === 'logout') || (isset($_POST['a
     header('Location: index.php');
     exit;
 }
-,,
 ob_start();
 header('Content-Type: application/json; charset=utf-8');
 ini_set('display_errors', '0');
